@@ -1,22 +1,5 @@
-const { exec } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-
 exports.handler = async function(event, context) {
   try {
-    // Return the HTML template directly for GET requests
-    if (event.httpMethod === 'GET') {
-      // Use the index.html from public directory instead of templates
-      const html = fs.readFileSync(path.resolve(__dirname, '../../../public/index.html'), 'utf8');
-      return {
-        statusCode: 200,
-        headers: {
-          'Content-Type': 'text/html',
-        },
-        body: html
-      };
-    }
-    
     // Handle POST requests to /process_image
     if (event.httpMethod === 'POST' && event.path === '/.netlify/functions/app/process_image') {
       // For simplicity, just return a mock response
@@ -24,14 +7,29 @@ exports.handler = async function(event, context) {
         statusCode: 200,
         headers: {
           'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'Content-Type'
         },
         body: JSON.stringify({
-          text: "Sample detected text. The Python OCR is not available in this serverless environment.",
+          text: "Sample detected text. The OCR service is running in demo mode in this serverless environment.",
           language: "en"
         })
       };
     }
     
+    // Handle OPTIONS requests (CORS preflight)
+    if (event.httpMethod === 'OPTIONS') {
+      return {
+        statusCode: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'Content-Type',
+          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS'
+        },
+        body: ''
+      };
+    }
+
     // Handle 404
     return {
       statusCode: 404,
