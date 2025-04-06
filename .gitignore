@@ -16,19 +16,50 @@ lib64/
 parts/
 sdist/
 var/
+wheels/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
 
 # Virtual environment
 venv/
 ENV/
+env.bak/
+venv.bak/
 
 # IDE
 .idea/
 .vscode/
 *.sublime-workspace
 *.sublime-project
+.spyderproject
+.spyproject
+.ropeproject
 
 # OS specific
 .DS_Store
@@ -43,4 +74,10 @@ Thumbs.db
 *.log
 *.mp3
 *.wav
-tmp/ 
+tmp/
+instance/
+.webassets-cache
+
+# Database
+db.sqlite3
+db.sqlite3-journal
