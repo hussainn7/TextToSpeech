@@ -150,7 +150,7 @@
             button.disabled = true;
             
             // Send to server
-            fetch('/process_image', {
+            fetch((window.location.href.includes('netlify') ? '/.netlify/functions/app/process_image' : '/process_image'), {
                 method: 'POST',
                 body: JSON.stringify({ image: dataUrl }),
                 headers: { 'Content-Type': 'application/json' }

@@ -1,0 +1,25 @@
+{
+  "name": "texttospeech",
+  "version": "1.0.0",
+  "description": "Camera OCR Text-to-Speech application",
+  "main": "index.js",
+  "scripts": {
+    "start": "python manage.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hussainn7/TextToSpeech.git"
+  },
+  "keywords": [
+    "ocr",
+    "text-to-speech",
+    "flask",
+    "python"
+  ],
+  "author": "hussainn7",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hussainn7/TextToSpeech/issues"
+  },
+  "homepage": "https://github.com/hussainn7/TextToSpeech#readme"
+} 

@@ -43,7 +43,7 @@ python manage.py
 
 2. Open a web browser and navigate to:
 ```
-http://localhost:5020
+http://localhost:5000
 ```
 
 3. Allow camera access when prompted
@@ -65,4 +65,15 @@ http://localhost:5020
 - EasyOCR: Optical Character Recognition
 - OpenCV & PIL: Image processing
 - gTTS & pyttsx3: Text-to-Speech
-- langdetect: Language detection 
+- langdetect: Language detection
+
+## Netlify Deployment
+
+This application can be deployed to Netlify using the following steps:
+
+1. Fork or clone this repository to your GitHub account.
+2. Log in to [Netlify](https://www.netlify.com/).
+3. Click "New site from Git" and select your GitHub repository.
+4. Leave the default settings and click "Deploy site".
+
+The application uses Netlify Functions to run the Flask backend. 
