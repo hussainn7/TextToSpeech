@@ -4,7 +4,8 @@
   "description": "Camera OCR Text-to-Speech application",
   "main": "index.js",
   "scripts": {
-    "start": "python manage.py"
+    "start": "python manage.py",
+    "build": "netlify-lambda build netlify/functions"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/hussainn7/TextToSpeech/issues"
   },
-  "homepage": "https://github.com/hussainn7/TextToSpeech#readme"
+  "homepage": "https://github.com/hussainn7/TextToSpeech#readme",
+  "dependencies": {
+    "netlify-lambda": "^2.0.15"
+  }
 } 
